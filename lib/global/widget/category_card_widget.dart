@@ -22,9 +22,8 @@ class CategoryCardWidget extends StatelessWidget {
       onTap: onTap,
       child: Card(
         elevation: 2,
-        shadowColor: ColorRes.borderColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: Container(
           height: cardHeight,
@@ -32,12 +31,6 @@ class CategoryCardWidget extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             color: ColorRes.white,
-            border: Border(
-              bottom: BorderSide(
-                color: ColorRes.borderColor, // Define the color of the bottom border
-                width: 1.0, // Set the thickness of the bottom border
-              ),
-            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

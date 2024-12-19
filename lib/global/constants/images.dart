@@ -11,11 +11,11 @@ class Images {
 
   //::::::::::::::::::::::::: Splash Img
 
-  static const String appLogo = 'assets/dummy_img/app_logo.png';
+  static const String appLogo = 'assets/images/app_logo.png';
   static const String userIc = 'assets/images/user.png';
   static const String carLogoIc = 'assets/images/car.png';
   static const String userPlaceholderIc = 'assets/images/user_placeholder.jpg';
 
-  static const String bookImgDmy = 'assets/dummy_img/book_images_dmy.jpg';
+  static const String bookImgDmy = 'assets/images/book_images_dmy.jpg';
 
 }

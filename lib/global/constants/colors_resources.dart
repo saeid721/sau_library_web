@@ -14,7 +14,7 @@ class ColorRes {
   static const Color textColor = Color(0xFF2A3256);
   static const Color searchTextColor = Color(0xFFBDBDBD);
   static const Color backgroundColor = Color(0xFFF7EFE5);
-  static const Color borderColor = Color(0xFFC8A1E0);
+  static const Color borderColor = Color(0xFFACDF87);
 
 
   /// ==@ All Color Res @==

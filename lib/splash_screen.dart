@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'global/constants/colors_resources.dart';
 import 'global/constants/enum.dart';
-import 'global/constants/images.dart';
 import 'global/widget/global_image_loader.dart';
+import 'global/widget/global_text.dart';
 import 'views/home_screen.dart';
 
 
@@ -26,13 +26,26 @@ class SplashScreen extends StatelessWidget {
             color: ColorRes.backgroundColor
         ),
         child: const Center(
-          child: GlobalImageLoader(
-            imagePath: 'assets/images/app_logo.png',
-            //imagePath: Images.appLogo,
-            height: 220,
-            width: 220,
-            fit: BoxFit.fill,
-            imageFor: ImageFor.asset,
+          child: Column(
+            spacing: 10,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GlobalImageLoader(
+                imagePath: 'assets/images/app_logo.png',
+                //imagePath: Images.appLogo,
+                width: 180,
+                imageFor: ImageFor.asset,
+              ),
+              GlobalText(
+                str: 'Sher-e-Bangla Agricultural University Library',
+                color: ColorRes.primaryColor,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                textAlign: TextAlign.center,
+                fontFamily: 'Rubik',
+              ),
+            ],
           ),
         ),
       ),

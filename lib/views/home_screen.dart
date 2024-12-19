@@ -1,12 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../global/constants/colors_resources.dart';
+import '../global/constants/enum.dart';
 import '../global/constants/images.dart';
 import '../global/model.dart';
 import '../global/widget/category_card_widget.dart';
 import '../global/widget/global_container.dart';
+import '../global/widget/global_image_loader.dart';
 import '../global/widget/global_sizedbox.dart';
 import '../global/widget/global_text.dart';
+import 'library_screen/library_web_view_screen.dart';
+import 'university_web_screen/university_web_view_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,39 +41,58 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
           backgroundColor: ColorRes.primaryColor,
           automaticallyImplyLeading: false,
-          title: const GlobalText(
-            str: 'SAU Library',
-            color: ColorRes.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            textAlign: TextAlign.center,
-            fontFamily: 'Rubik',
-          ),
-          actions: [
-            GestureDetector(
-              onTap: () {
-                // Navigate to Notification Screen
-              },
-              child: const Icon(
-                Icons.notifications_sharp,
-                color: ColorRes.white,
-                size: 20,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GlobalImageLoader(
+                imagePath: Images.appLogo,
+                width: 40,
+                fit: BoxFit.fill,
+                imageFor: ImageFor.asset,
               ),
-            ),
-            sizedBoxW(15),
-          ],
+              Expanded(
+                child: const GlobalText(
+                  str: 'Sher-e-Bangla Agricultural University Library',
+                  color: ColorRes.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  textAlign: TextAlign.center,
+                  fontFamily: 'Rubik',
+                  maxLines: 2,
+                ),
+              ),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to Notification Screen
+                    },
+                    child: const Icon(
+                      Icons.search,
+                      color: ColorRes.white,
+                      size: 22,
+                    ),
+                  ),
+                  sizedBoxW(15),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
+            spacing: 5,
             children: [
               // Carousel Slider
               ClipRRect(
@@ -100,8 +124,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
-              // Slider Indicators
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: sliderImage.asMap().entries.map((entry) {
@@ -119,16 +141,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 }).toList(),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               // Categories Row
               Row(
                 children: [
                   Expanded(
                     child: CategoryCardWidget(
                       imagePath: 'assets/icons/library.png',
-                      title: 'Library site',
+                      title: 'Library Site',
                       onTap: () {
-                        // Navigate to Islamic SubCategory Screen
+                        Get.off(() => LibraryWebViewScreen());
                       },
                     ),
                   ),
@@ -138,14 +160,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       imagePath: 'assets/icons/books.png',
                       title: 'Book Search',
                       onTap: () {
-                        // Navigate to General SubCategory Screen
+                        Get.to(() => LibraryWebViewScreen());
                       },
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              // Categories Row
               Row(
                 children: [
                   Expanded(
@@ -153,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       imagePath: 'assets/icons/thesis.png',
                       title: 'e-Theses Search',
                       onTap: () {
-                        // Navigate to Islamic SubCategory Screen
+                        Get.to(() => LibraryWebViewScreen());
                       },
                     ),
                   ),
@@ -163,14 +183,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       imagePath: 'assets/icons/e_books.png',
                       title: 'Online Books',
                       onTap: () {
-                        // Navigate to General SubCategory Screen
+                        Get.to(() => LibraryWebViewScreen());
                       },
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              // Categories Row
               Row(
                 children: [
                   Expanded(
@@ -178,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       imagePath: 'assets/icons/website.png',
                       title: 'University Site',
                       onTap: () {
-                        // Navigate to Islamic SubCategory Screen
+                        Get.to(() => UniversityWebViewScreen());
                       },
                     ),
                   ),
