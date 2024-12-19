@@ -42,7 +42,7 @@ class _LibraryWebViewScreenState extends State<LibraryWebViewScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://academic.oup.com/oxford-scholarship-online'),
+        Uri.parse('https://saulibrary.edu.bd/new/index.php'),
       );
   }
 
