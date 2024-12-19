@@ -10,6 +10,7 @@ import '../global/widget/global_container.dart';
 import '../global/widget/global_image_loader.dart';
 import '../global/widget/global_sizedbox.dart';
 import '../global/widget/global_text.dart';
+import 'e_books_screen/e_books_screen.dart';
 import 'library_screen/library_web_view_screen.dart';
 import 'university_web_screen/university_web_view_screen.dart';
 
@@ -183,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       imagePath: 'assets/icons/e_books.png',
                       title: 'Online Books',
                       onTap: () {
-                        Get.to(() => LibraryWebViewScreen());
+                        Get.to(() => EbooksScreen());
                       },
                     ),
                   ),
