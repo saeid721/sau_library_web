@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../global/constants/colors_resources.dart';
-import '../../global/constants/enum.dart';
 import '../../global/constants/images.dart';
 import '../../global/model.dart';
-import '../../global/widget/global_image_loader.dart';
-import '../../global/widget/global_sizedbox.dart';
-import '../../global/widget/global_text.dart';
-import '../../global/widget/home_menu_widget.dart';
+import '../../global/widget/custom_app_bar.dart';
 import 'components/category_widget.dart';
 import 'imf_elibrary_view_screen.dart';
 import 'oxford_scholarship_online_view_screen.dart';
@@ -34,49 +29,11 @@ class _EbooksScreenState extends State<EbooksScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: AppBar(
-          backgroundColor: ColorRes.primaryColor,
-          automaticallyImplyLeading: false,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GlobalImageLoader(
-                imagePath: Images.appLogo,
-                width: 40,
-                fit: BoxFit.fill,
-                imageFor: ImageFor.asset,
-              ),
-              Expanded(
-                child: const GlobalText(
-                  str: 'SAU - Online Books',
-                  color: ColorRes.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  textAlign: TextAlign.center,
-                  fontFamily: 'Rubik',
-                  maxLines: 2,
-                ),
-              ),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      // Navigate to Notification Screen
-                    },
-                    child: const Icon(
-                      Icons.search,
-                      color: ColorRes.white,
-                      size: 22,
-                    ),
-                  ),
-                  sizedBoxW(15),
-                ],
-              ),
-            ],
-          ),
-        ),
+      appBar: CustomAppBar(
+        title: 'SAU - Online Books',
+        onSearchTap: () {
+          // Handle search action
+        },
       ),
 
       body: SingleChildScrollView(

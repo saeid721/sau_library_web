@@ -2,13 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../global/constants/colors_resources.dart';
-import '../global/constants/enum.dart';
 import '../global/constants/images.dart';
 import '../global/model.dart';
+import '../global/widget/custom_app_bar.dart';
 import '../global/widget/global_container.dart';
-import '../global/widget/global_image_loader.dart';
-import '../global/widget/global_sizedbox.dart';
-import '../global/widget/global_text.dart';
 import '../global/widget/home_menu_widget.dart';
 import 'books_search_screen/books_search_screen.dart';
 import 'e_books_screen/e_books_screen.dart';
@@ -45,51 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: AppBar(
-          backgroundColor: ColorRes.primaryColor,
-          automaticallyImplyLeading: false,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GlobalImageLoader(
-                imagePath: Images.appLogo,
-                width: 40,
-                fit: BoxFit.fill,
-                imageFor: ImageFor.asset,
-              ),
-              Expanded(
-                child: const GlobalText(
-                  str: 'Sher-e-Bangla Agricultural University Library',
-                  color: ColorRes.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  textAlign: TextAlign.center,
-                  fontFamily: 'Rubik',
-                  maxLines: 2,
-                ),
-              ),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      // Navigate to Notification Screen
-                    },
-                    child: const Icon(
-                      Icons.search,
-                      color: ColorRes.white,
-                      size: 22,
-                    ),
-                  ),
-                  sizedBoxW(15),
-                ],
-              ),
-            ],
-          ),
-        ),
+      appBar: CustomAppBar(
+        title: 'Sher-e-Bangla Agricultural University Library',
+        onSearchTap: () {
+          // Handle search action
+        },
       ),
-
       body: SafeArea(
         child: Column(
           spacing: 5,
