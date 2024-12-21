@@ -12,6 +12,17 @@ class Images {
   //::::::::::::::::::::::::: Splash Img
 
   static const String appLogo = 'assets/images/app_logo.png';
+  static const String librarySiteInc = 'assets/icons/library.png';
+  static const String bookSearchInc = 'assets/icons/books.png';
+  static const String eThesesSearchInc = 'assets/icons/thesis.png';
+  static const String onlineBooksInc = 'assets/icons/e_books.png';
+  static const String universitySiteInc = 'assets/icons/website.png';
+
+  static const String oxfordInc = 'assets/images/oxford.png';
+  static const String elibraryInc = 'assets/images/elibrary.png';
+  static const String taylorInc = 'assets/images/taylor.png';
+  static const String wileyInc = 'assets/images/wiley.png';
+
   static const String userIc = 'assets/images/user.png';
   static const String carLogoIc = 'assets/images/car.png';
   static const String userPlaceholderIc = 'assets/images/user_placeholder.jpg';

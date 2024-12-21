@@ -1,61 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../../../global/constants/colors_resources.dart';
+import '../../../global/widget/global_image_loader.dart';
+import '../../../global/widget/global_sizedbox.dart';
+import '../../../global/widget/global_text.dart';
 
-const double cardHeight = 130.0;
-const double imageWidth = 120.0;
-const double imageHeight = 120.0;
-
-class eBooksCategoryCardWidget extends StatelessWidget {
-  final String? imagePath;
-  final String title;
-  final VoidCallback onTap;
-
-  const eBooksCategoryCardWidget({
+class EbooksCategoryCardWidget extends StatelessWidget {
+  final double? height;
+  final double? width;
+  final int? maxLines;
+  final String imagePath;
+  final String text;
+  const EbooksCategoryCardWidget({
     super.key,
-    this.imagePath,
-    required this.title,
-    required this.onTap,
+    this.height,
+    this.width,
+    this.maxLines,
+    required this.imagePath,
+    required this.text,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Card(
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Container(
-          width: Get.width,
-          padding: EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: ColorRes.white,
+    return Container(
+      width: size(context).width,
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      decoration: BoxDecoration(
+        color: ColorRes.white,
+        boxShadow: [
+          BoxShadow(
+            color: ColorRes.grey.withOpacity(0.3),
+            blurRadius: 4,
+            offset: const Offset(2, 2),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (imagePath != null)
-                Image.asset(
-                  imagePath!,
-                  width: 120,
-                  fit: BoxFit.cover,
-                ),
-              const SizedBox(height: 5),
-              Text(
-                title,
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: ColorRes.grey,
-                  fontWeight: FontWeight.w500,
+        ],
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.only(right: 10),
+              decoration: BoxDecoration(
+                border: Border(
+                  right: BorderSide(
+                    color: ColorRes.grey,
+                    width: 1.0,
+                  ),
                 ),
               ),
-            ],
+              child: GlobalImageLoader(
+                imagePath: imagePath,
+                height: height ?? 40,
+              ),
+            ),
           ),
-        ),
+          const SizedBox(height: 5),
+          Expanded(
+            flex: 2,
+            child: GlobalText(
+              str: text,
+              color: ColorRes.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.right,
+              maxLines: maxLines ?? 2,
+            ),
+          ),
+        ],
       ),
     );
   }

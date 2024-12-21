@@ -5,11 +5,11 @@ import '../global/constants/colors_resources.dart';
 import '../global/constants/enum.dart';
 import '../global/constants/images.dart';
 import '../global/model.dart';
-import '../global/widget/category_card_widget.dart';
 import '../global/widget/global_container.dart';
 import '../global/widget/global_image_loader.dart';
 import '../global/widget/global_sizedbox.dart';
 import '../global/widget/global_text.dart';
+import '../global/widget/home_menu_widget.dart';
 import 'books_search_screen/books_search_screen.dart';
 import 'e_books_screen/e_books_screen.dart';
 import 'library_screen/library_web_view_screen.dart';
@@ -24,10 +24,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<GlobalMenuModel> menuItem = [
-    GlobalMenuModel(img: Images.appLogo, text: 'Library site'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Book Search'),
-    GlobalMenuModel(img: Images.appLogo, text: 'e-Theses Search'),
-    GlobalMenuModel(img: Images.appLogo, text: 'Online Books'),
+    GlobalMenuModel(img: Images.librarySiteInc, text: 'Library Site'),
+    GlobalMenuModel(img: Images.bookSearchInc, text: 'Book Search'),
+    GlobalMenuModel(img: Images.eThesesSearchInc, text: 'e-Theses Search'),
+    GlobalMenuModel(img: Images.universitySiteInc, text: 'Online Books'),
     GlobalMenuModel(img: Images.appLogo, text: 'University Site'),
   ];
 
@@ -91,13 +91,13 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            spacing: 5,
-            children: [
-              // Carousel Slider
-              ClipRRect(
+        child: Column(
+          spacing: 5,
+          children: [
+            // Carousel Slider
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 child: CarouselSlider(
                   items: sliderImage.map((item) {
@@ -126,96 +126,140 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: sliderImage.asMap().entries.map((entry) {
-                  return AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    height: 7,
-                    width: currentIndex == entry.key ? 15 : 7,
-                    margin: const EdgeInsets.symmetric(horizontal: 3),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: currentIndex == entry.key
-                          ? ColorRes.primaryColor
-                          : ColorRes.borderColor,
-                    ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: sliderImage.asMap().entries.map((entry) {
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  height: 7,
+                  width: currentIndex == entry.key ? 15 : 7,
+                  margin: const EdgeInsets.symmetric(horizontal: 3),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: currentIndex == entry.key
+                        ? ColorRes.primaryColor
+                        : ColorRes.borderColor,
+                  ),
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 5),
+
+
+            GridView.builder(
+                itemCount: menuItem.length,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 15,
+                    mainAxisExtent: 145
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                itemBuilder: (ctx, index){
+                  return GestureDetector(
+                      onTap: (){
+                        switch(index){
+                          case 0:
+                            Get.to(()=> const LibraryWebViewScreen());
+                            break;
+                          case 1:
+                            Get.to(()=> const BooksSearchScreen());
+                            break;
+                          case 2:
+                            Get.to(()=> const LibraryWebViewScreen());
+                            break;
+                          case 3:
+                            Get.to(()=> const EbooksScreen());
+                            break;
+                          case 4:
+                            Get.to(()=> const UniversityWebViewScreen());
+                            break;
+                        }
+                      },
+                      child: HomeMenuWidget(
+                          height: 40,
+                          width: 40,
+                          maxLines: 2,
+                          imagePath: menuItem[index].img,
+                          text: menuItem[index].text
+                      )
                   );
-                }).toList(),
-              ),
-              const SizedBox(height: 5),
-              // Categories Row
-              Row(
-                children: [
-                  Expanded(
-                    child: CategoryCardWidget(
-                      imagePath: 'assets/icons/library.png',
-                      title: 'Library Site',
-                      onTap: () {
-                        Get.off(() => LibraryWebViewScreen());
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 5),
-                  Expanded(
-                    child: CategoryCardWidget(
-                      imagePath: 'assets/icons/books.png',
-                      title: 'Book Search',
-                      onTap: () {
-                        Get.to(() => BooksSearchScreen());
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CategoryCardWidget(
-                      imagePath: 'assets/icons/thesis.png',
-                      title: 'e-Theses Search',
-                      onTap: () {
-                        Get.to(() => LibraryWebViewScreen());
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 5),
-                  Expanded(
-                    child: CategoryCardWidget(
-                      imagePath: 'assets/icons/e_books.png',
-                      title: 'Online Books',
-                      onTap: () {
-                        Get.to(() => EbooksScreen());
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CategoryCardWidget(
-                      imagePath: 'assets/icons/website.png',
-                      title: 'University Site',
-                      onTap: () {
-                        Get.to(() => UniversityWebViewScreen());
-                      },
-                    ),
-                  ),
-                  // const SizedBox(width: 5),
-                  // Expanded(
-                  //   child: CategoryCardWidget(
-                  //     imagePath: 'assets/icons/e_books.png',
-                  //     title: 'Online Books',
-                  //     onTap: () {
-                  //       // Navigate to General SubCategory Screen
-                  //     },
-                  //   ),
-                  // ),
-                ],
-              ),
-            ],
-          ),
+                }
+            ),
+
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       child: CategoryCardWidget(
+            //         imagePath: 'assets/icons/library.png',
+            //         title: 'Library Site',
+            //         onTap: () {
+            //           Get.off(() => LibraryWebViewScreen());
+            //         },
+            //       ),
+            //     ),
+            //     const SizedBox(width: 5),
+            //     Expanded(
+            //       child: CategoryCardWidget(
+            //         imagePath: 'assets/icons/books.png',
+            //         title: 'Book Search',
+            //         onTap: () {
+            //           Get.to(() => BooksSearchScreen());
+            //         },
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       child: CategoryCardWidget(
+            //         imagePath: 'assets/icons/thesis.png',
+            //         title: 'e-Theses Search',
+            //         onTap: () {
+            //           Get.to(() => LibraryWebViewScreen());
+            //         },
+            //       ),
+            //     ),
+            //     const SizedBox(width: 5),
+            //     Expanded(
+            //       child: CategoryCardWidget(
+            //         imagePath: 'assets/icons/e_books.png',
+            //         title: 'Online Books',
+            //         onTap: () {
+            //           Get.to(() => EbooksScreen());
+            //         },
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       child: CategoryCardWidget(
+            //         imagePath: 'assets/icons/website.png',
+            //         title: 'University Site',
+            //         onTap: () {
+            //           Get.to(() => UniversityWebViewScreen());
+            //         },
+            //       ),
+            //     ),
+            //     // const SizedBox(width: 5),
+            //     // Expanded(
+            //     //   child: CategoryCardWidget(
+            //     //     imagePath: 'assets/icons/e_books.png',
+            //     //     title: 'Online Books',
+            //     //     onTap: () {
+            //     //       // Navigate to General SubCategory Screen
+            //     //     },
+            //     //   ),
+            //     // ),
+            //   ],
+            // ),
+          ],
         ),
       ),
     );
