@@ -6,6 +6,7 @@ import '../../global/widget/custom_app_bar.dart';
 import 'components/category_widget.dart';
 import 'jstor_view_screen.dart';
 import 'emerald_insight_view_screen.dart';
+import 'licob_view_screen.dart';
 import 'teeal_view_screen.dart';
 import 'indian_journal_view_screen.dart';
 
@@ -18,11 +19,11 @@ class OnlineJournalsScreen extends StatefulWidget {
 
 class _OnlineJournalsScreenState extends State<OnlineJournalsScreen> {
   List<GlobalMenuModel> menuItem = [
-    GlobalMenuModel(img: Images.oxfordInc, text: 'JSTOR'),
-    GlobalMenuModel(img: Images.elibraryInc, text: 'Emerald insight'),
-    GlobalMenuModel(img: Images.taylorInc, text: 'Teeal'),
-    GlobalMenuModel(img: Images.wileyInc, text: 'Indian Journal.com'),
-    GlobalMenuModel(img: Images.wileyInc, text: 'Subscribed e-Journal Consortia'),
+    GlobalMenuModel(img: Images.jstorInc, text: 'JSTOR'),
+    GlobalMenuModel(img: Images.emerald_insightInc, text: 'Emerald insight'),
+    GlobalMenuModel(img: Images.teealInc, text: 'Teeal'),
+    GlobalMenuModel(img: Images.indianJournalInc, text: 'Indian Journal.com'),
+    GlobalMenuModel(img: Images.licobInc, text: 'Subscribed e-Journal Consortia'),
   ];
 
   @override
@@ -58,16 +59,19 @@ class _OnlineJournalsScreenState extends State<OnlineJournalsScreen> {
                       onTap: (){
                         switch(index){
                           case 0:
-                            Get.to(()=> const OxfordScholarshipOnlineScreen());
+                            Get.to(()=> const JstorScreen());
                             break;
                           case 1:
-                            Get.to(()=> const IMFeLibraryScreen());
+                            Get.to(()=> const EmeraldInsightScreen());
                             break;
                           case 2:
-                            Get.to(()=> const TaylorFrancisOnlineScreen());
+                            Get.to(()=> const TeealScreen());
                             break;
                           case 3:
-                            Get.to(()=> const WileyOnlineLibraryScreen());
+                            Get.to(()=> const IndianJournalScreen());
+                            break;
+                          case 4:
+                            Get.to(()=> const LicobScreen());
                             break;
                         }
                       },

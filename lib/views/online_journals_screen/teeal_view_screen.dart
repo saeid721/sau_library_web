@@ -5,14 +5,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/custom_app_bar.dart';
 import '../../global/widget/custom_bottom_navigation_bar.dart';
 
-class TaylorFrancisOnlineScreen extends StatefulWidget {
-  const TaylorFrancisOnlineScreen({super.key});
+class TeealScreen extends StatefulWidget {
+  const TeealScreen({super.key});
 
   @override
-  State<TaylorFrancisOnlineScreen> createState() => _TaylorFrancisOnlineScreenState();
+  State<TeealScreen> createState() => _TeealScreenState();
 }
 
-class _TaylorFrancisOnlineScreenState extends State<TaylorFrancisOnlineScreen> {
+class _TeealScreenState extends State<TeealScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 

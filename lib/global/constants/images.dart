@@ -24,6 +24,12 @@ class Images {
   static const String taylorInc = 'assets/images/taylor.png';
   static const String wileyInc = 'assets/images/wiley.png';
 
+  static const String jstorInc = 'assets/images/jstor.png';
+  static const String emerald_insightInc = 'assets/images/Emerald_insight.png';
+  static const String teealInc = 'assets/images/teeal.png';
+  static const String indianJournalInc = 'assets/images/IndianJournal.png';
+  static const String licobInc = 'assets/images/licob.png';
+
   static const String userIc = 'assets/images/user.png';
   static const String carLogoIc = 'assets/images/car.png';
   static const String userPlaceholderIc = 'assets/images/user_placeholder.jpg';

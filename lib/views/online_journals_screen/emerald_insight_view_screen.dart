@@ -5,14 +5,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/custom_app_bar.dart';
 import '../../global/widget/custom_bottom_navigation_bar.dart';
 
-class OxfordScholarshipOnlineScreen extends StatefulWidget {
-  const OxfordScholarshipOnlineScreen({super.key});
+class EmeraldInsightScreen extends StatefulWidget {
+  const EmeraldInsightScreen({super.key});
 
   @override
-  State<OxfordScholarshipOnlineScreen> createState() => _OxfordScholarshipOnlineScreenState();
+  State<EmeraldInsightScreen> createState() => _EmeraldInsightScreenState();
 }
 
-class _OxfordScholarshipOnlineScreenState extends State<OxfordScholarshipOnlineScreen> {
+class _EmeraldInsightScreenState extends State<EmeraldInsightScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 

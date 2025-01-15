@@ -5,14 +5,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/custom_app_bar.dart';
 import '../../global/widget/custom_bottom_navigation_bar.dart';
 
-class IMFeLibraryScreen extends StatefulWidget {
-  const IMFeLibraryScreen({super.key});
+class JstorScreen extends StatefulWidget {
+  const JstorScreen({super.key});
 
   @override
-  State<IMFeLibraryScreen> createState() => _IMFeLibraryScreenState();
+  State<JstorScreen> createState() => _JstorScreenState();
 }
 
-class _IMFeLibraryScreenState extends State<IMFeLibraryScreen> {
+class _JstorScreenState extends State<JstorScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 

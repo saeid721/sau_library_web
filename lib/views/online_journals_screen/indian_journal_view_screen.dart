@@ -5,14 +5,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/custom_app_bar.dart';
 import '../../global/widget/custom_bottom_navigation_bar.dart';
 
-class WileyOnlineLibraryScreen extends StatefulWidget {
-  const WileyOnlineLibraryScreen({super.key});
+class IndianJournalScreen extends StatefulWidget {
+  const IndianJournalScreen({super.key});
 
   @override
-  State<WileyOnlineLibraryScreen> createState() => _WileyOnlineLibraryScreenState();
+  State<IndianJournalScreen> createState() => _IndianJournalScreenState();
 }
 
-class _WileyOnlineLibraryScreenState extends State<WileyOnlineLibraryScreen> {
+class _IndianJournalScreenState extends State<IndianJournalScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 
