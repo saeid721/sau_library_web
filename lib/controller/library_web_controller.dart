@@ -1,5 +1,5 @@
 // import 'package:get/get.dart';
-// import '../views/library_screen/university_web_view_screen.dart';
+// import '../views/library_screen/e_theses_search_screen.dart';
 //
 // class LibraryWebController extends GetxController {
 //   final List<Map<String, String>> journalData = [

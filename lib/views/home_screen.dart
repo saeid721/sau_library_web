@@ -9,6 +9,7 @@ import '../global/widget/global_container.dart';
 import '../global/widget/home_menu_widget.dart';
 import 'books_search_screen/books_search_screen.dart';
 import 'e_books_screen/e_books_screen.dart';
+import 'e_theses_search_screen/e_theses_search_screen.dart';
 import 'library_screen/library_web_view_screen.dart';
 import 'university_web_screen/university_web_view_screen.dart';
 
@@ -127,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Get.to(()=> const BooksSearchScreen());
                             break;
                           case 2:
-                            Get.to(()=> const LibraryWebViewScreen());
+                            Get.to(()=> const EthesesSearchScreen());
                             break;
                           case 3:
                             Get.to(()=> const EbooksScreen());
