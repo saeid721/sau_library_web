@@ -13,9 +13,10 @@ class Images {
 
   static const String appLogo = 'assets/images/app_logo.png';
   static const String librarySiteInc = 'assets/icons/library.png';
-  static const String bookSearchInc = 'assets/icons/books.png';
+  static const String bookSearchInc = 'assets/icons/online_book.png';
   static const String eThesesSearchInc = 'assets/icons/thesis.png';
-  static const String onlineBooksInc = 'assets/icons/e_books.png';
+  static const String onlineBooksInc = 'assets/icons/online_learning.png';
+  static const String onlineJournalInc = 'assets/icons/journal.png';
   static const String universitySiteInc = 'assets/icons/website.png';
 
   static const String oxfordInc = 'assets/images/oxford.png';

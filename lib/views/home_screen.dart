@@ -25,8 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
     GlobalMenuModel(img: Images.librarySiteInc, text: 'Library Site'),
     GlobalMenuModel(img: Images.bookSearchInc, text: 'Book Search'),
     GlobalMenuModel(img: Images.eThesesSearchInc, text: 'e-Theses Search'),
-    GlobalMenuModel(img: Images.universitySiteInc, text: 'Online Books'),
-    GlobalMenuModel(img: Images.appLogo, text: 'University Site'),
+    GlobalMenuModel(img: Images.onlineBooksInc, text: 'Online Books'),
+    GlobalMenuModel(img: Images.onlineJournalInc, text: 'Online Journal'),
+    GlobalMenuModel(img: Images.universitySiteInc, text: 'University Site'),
   ];
 
   int currentIndex = 0;
@@ -134,6 +135,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             Get.to(()=> const EbooksScreen());
                             break;
                           case 4:
+                            Get.to(()=> const EbooksScreen());
+                            break;
+                          case 5:
                             Get.to(()=> const UniversityWebViewScreen());
                             break;
                         }
