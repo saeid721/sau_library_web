@@ -38,7 +38,7 @@ class _IMFeLibraryScreenState extends State<IMFeLibraryScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.elibrary.imf.org/'),
+        Uri.parse('https://www.jstor.org/'),
       );
   }
 
@@ -48,7 +48,7 @@ class _IMFeLibraryScreenState extends State<IMFeLibraryScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
-        title: 'SAU - Online Books',
+        title: 'SAU - Online Journals',
         onSearchTap: () {
           // Handle search action
         },

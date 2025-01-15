@@ -5,14 +5,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../global/widget/custom_app_bar.dart';
 import '../../global/widget/custom_bottom_navigation_bar.dart';
 
-class IMFeLibraryScreen extends StatefulWidget {
-  const IMFeLibraryScreen({super.key});
+class TaylorFrancisOnlineScreen extends StatefulWidget {
+  const TaylorFrancisOnlineScreen({super.key});
 
   @override
-  State<IMFeLibraryScreen> createState() => _IMFeLibraryScreenState();
+  State<TaylorFrancisOnlineScreen> createState() => _TaylorFrancisOnlineScreenState();
 }
 
-class _IMFeLibraryScreenState extends State<IMFeLibraryScreen> {
+class _TaylorFrancisOnlineScreenState extends State<TaylorFrancisOnlineScreen> {
   late WebViewController controller;
   var loadingPercentage = 0;
 
@@ -38,7 +38,7 @@ class _IMFeLibraryScreenState extends State<IMFeLibraryScreen> {
         },
       ))
       ..loadRequest(
-        Uri.parse('https://www.elibrary.imf.org/'),
+        Uri.parse('https://saulibrary.edu.bd/new/licob.php'),
       );
   }
 
@@ -48,7 +48,7 @@ class _IMFeLibraryScreenState extends State<IMFeLibraryScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
-        title: 'SAU - Online Books',
+        title: 'SAU - Online Journals',
         onSearchTap: () {
           // Handle search action
         },

@@ -48,7 +48,7 @@ class _TaylorFrancisOnlineScreenState extends State<TaylorFrancisOnlineScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
-        title: 'SAU - Library',
+        title: 'SAU - Online Books',
         onSearchTap: () {
           // Handle search action
         },
