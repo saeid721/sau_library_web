@@ -11,6 +11,7 @@ import 'books_search_screen/books_search_screen.dart';
 import 'e_books_screen/e_books_screen.dart';
 import 'e_theses_search_screen/e_theses_search_screen.dart';
 import 'library_screen/library_web_view_screen.dart';
+import 'online_journals_screen/online_journals_screen.dart';
 import 'university_web_screen/university_web_view_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -135,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Get.to(()=> const EbooksScreen());
                             break;
                           case 4:
-                            Get.to(()=> const EbooksScreen());
+                            Get.to(()=> const OnlineJournalsScreen());
                             break;
                           case 5:
                             Get.to(()=> const UniversityWebViewScreen());
