@@ -20,7 +20,7 @@ class OnlineJournalsScreen extends StatefulWidget {
 class _OnlineJournalsScreenState extends State<OnlineJournalsScreen> {
   List<GlobalMenuModel> menuItem = [
     GlobalMenuModel(img: Images.jstorInc, text: 'JSTOR'),
-    GlobalMenuModel(img: Images.emerald_insightInc, text: 'Emerald insight'),
+    GlobalMenuModel(img: Images.emeraldInsightInc, text: 'Emerald insight'),
     GlobalMenuModel(img: Images.teealInc, text: 'Teeal'),
     GlobalMenuModel(img: Images.indianJournalInc, text: 'Indian Journal.com'),
     GlobalMenuModel(img: Images.licobInc, text: 'Subscribed e-Journal Consortia'),

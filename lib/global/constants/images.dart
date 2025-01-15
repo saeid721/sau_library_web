@@ -25,7 +25,7 @@ class Images {
   static const String wileyInc = 'assets/images/wiley.png';
 
   static const String jstorInc = 'assets/images/jstor.png';
-  static const String emerald_insightInc = 'assets/images/Emerald_insight.png';
+  static const String emeraldInsightInc = 'assets/images/Emerald_insight.png';
   static const String teealInc = 'assets/images/teeal.png';
   static const String indianJournalInc = 'assets/images/IndianJournal.png';
   static const String licobInc = 'assets/images/licob.png';

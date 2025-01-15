@@ -54,7 +54,7 @@ class EbooksCategoryCardWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 5, width: 5,),
           Expanded(
             flex: 2,
             child: GlobalText(
@@ -63,7 +63,7 @@ class EbooksCategoryCardWidget extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w600,
               overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.left,
               maxLines: maxLines ?? 2,
             ),
           ),
