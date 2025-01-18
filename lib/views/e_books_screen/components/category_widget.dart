@@ -25,6 +25,7 @@ class EbooksCategoryCardWidget extends StatelessWidget {
       width: size(context).width,
       padding: const EdgeInsets.symmetric(horizontal: 4),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
         color: ColorRes.white,
         boxShadow: [
           BoxShadow(

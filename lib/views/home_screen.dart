@@ -47,9 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
         title: 'Sher-e-Bangla Agricultural University Library',
-        onSearchTap: () {
-          // Handle search action
-        },
+        // onSearchTap: () {
+        //   // Handle search action
+        // },
       ),
       body: SafeArea(
         child: Column(
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // Carousel Slider
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 child: CarouselSlider(
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: sliderImage.asMap().entries.map((entry) {
                 return AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
-                  height: 7,
+                  height: 5,
                   width: currentIndex == entry.key ? 15 : 7,
                   margin: const EdgeInsets.symmetric(horizontal: 3),
                   decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               }).toList(),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
 
 
             GridView.builder(

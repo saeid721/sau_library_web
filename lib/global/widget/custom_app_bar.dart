@@ -35,25 +35,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               str: title,
               color: ColorRes.white,
               fontSize: 16,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w700,
               textAlign: TextAlign.center,
               fontFamily: 'Rubik',
               maxLines: 2,
             ),
           ),
-          Row(
-            children: [
-              GestureDetector(
-                onTap: onSearchTap,
-                child: const Icon(
-                  Icons.search,
-                  color: ColorRes.white,
-                  size: 22,
-                ),
-              ),
-              sizedBoxW(15),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     GestureDetector(
+          //       onTap: onSearchTap,
+          //       child: const Icon(
+          //         Icons.search,
+          //         color: ColorRes.white,
+          //         size: 22,
+          //       ),
+          //     ),
+          //     sizedBoxW(15),
+          //   ],
+          // ),
         ],
       ),
     );

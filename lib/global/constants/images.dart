@@ -20,6 +20,7 @@ class Images {
   static const String universitySiteInc = 'assets/icons/website.png';
 
   static const String oxfordInc = 'assets/images/oxford.png';
+  static const String proquestEbookCentralInc = 'assets/images/ProquestEbookCentral.png';
   static const String elibraryInc = 'assets/images/elibrary.png';
   static const String taylorInc = 'assets/images/taylor.png';
   static const String wileyInc = 'assets/images/wiley.png';
